@@ -1,0 +1,77 @@
+<mat-card>
+    <mat-spinner *ngIf="estaCarregando"></mat-spinner>
+    <form [formGroup]="form" (submit)="onSalvarPaciente()" *ngIf="!estaCarregando">
+
+      <mat-form-field>
+        <input type="text"  matInput placeholder="nome" formControlName="nome" name="nome"/>
+          <!-- <mat-error *ngIf="form.get('nome').invalid">Digite um nome válido</mat-error> -->
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="text"  matInput placeholder="rg" formControlName="rg" name="rg"/>
+          <!-- <mat-error *ngIf="form.get('rg').invalid">Digite um rg válido</mat-error> -->
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="text"  matInput placeholder="cpf" formControlName="cpf" name="cpf"/>
+          <!-- <mat-error *ngIf="form.get('cpf').invalid">Digite um cpf válido</mat-error> -->
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="text"  matInput placeholder="sexo" formControlName="sexo" name="sexo"/>
+          <!-- <mat-error *ngIf="form.get('sexo').invalid">Digite o sexo</mat-error> -->
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="text"  matInput placeholder="Telefone fixo"  formControlName="fone_fixo" name="Telefone fixo"/>
+          <!-- <mat-error *ngIf="form.get('fone_fixo').invalid">Digite um telefone válido</mat-error> -->
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="text"  matInput placeholder="celular"  formControlName="celular" name="celular"/>
+          <!-- <mat-error *ngIf="form.get('celular').invalid">Digite um celular válido</mat-error> -->
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="text"  matInput placeholder="endereco" formControlName="endereco" name="endereco"/>
+          <!-- <mat-error *ngIf="form.get('endereco').invalid">Digite um endereço válido</mat-error> -->
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="text"  matInput placeholder="bairro" formControlName="bairro" name="bairro"/>
+          <!-- <mat-error *ngIf="form.get('bairro').invalid">Digite um bairro válido</mat-error> -->
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="text"  matInput placeholder="cep" formControlName="cep" name="cep"/>
+          <!-- <mat-error *ngIf="form.get('cep').invalid">Digite um cep válido</mat-error> -->
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="text"  matInput placeholder="cidade" formControlName="cidade" name="cidade"/>
+          <!-- <mat-error *ngIf="form.get('cidade').invalid">Digite uma cidade válida</mat-error> -->
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="text"  matInput placeholder="estado" formControlName="estado" name="estado"/>
+          <!-- <mat-error *ngIf="form.get('estado').invalid">Digite um estado válido</mat-error> -->
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text"  matInput placeholder="email" formControlName="email" name="email"/>
+          <!-- <mat-error *ngIf="form.get('email').invalid">Digite um email válido</mat-error> -->
+      </mat-form-field>
+
+  <div>
+    <button mat-stroked-button type="button" (click)="selecionaArquivo.click()">Carregar Foto</button>
+    <input type="file" (change)="onImagemSelecionada($event)" #selecionaArquivo>
+    <div class="imagem-preview">
+      <img [src]="previewImagem" *ngIf="previewImagem && previewImagem !== '' && form.get('imagem').valid" [alt]="form.value.nome">
+    </div>
+  </div>  
+  
+      <button color="accent" mat-raised-button (click)="onSalvarPaciente()">
+        Cadastrar Paciente
+      </button>
+    </form>
+  </mat-card>
+  

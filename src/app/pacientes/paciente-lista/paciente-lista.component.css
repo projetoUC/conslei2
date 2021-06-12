@@ -1,0 +1,22 @@
+:host {
+  margin-top: 1rem;
+  display: block;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+.paciente-imagem {
+  width: 100%;
+  display: flex;
+  justify-content: bottom;
+}
+
+.paciente-imagem > img {
+  max-width: 50%;
+}
+
+mat-paginator{
+  margin-top: 1rem;
+}

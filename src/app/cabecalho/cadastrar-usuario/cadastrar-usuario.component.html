@@ -1,0 +1,61 @@
+<main>
+    <section>
+      
+        <div class="container w-100 mt-5">
+            <div class="row border d-flex bg-success align-self-center ">
+                <h3 class="text-white">cadastrar usuario</h3>
+            </div>
+        </div>
+
+      
+        <div class="divCard1 container card mt-5">
+    
+            <label for="nome">Dados Pessoais</label>
+            <div class="mb-5 form-group">
+                <label id = "demo" class="labels" for="nome">Nome</label>
+                <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
+                <label class="labels" for="rg">RG</label>
+                <input type="text" class="form-control" id="rg" placeholder="Digite seu RG">
+                <label class="labels" for="cpf">CPF</label>
+                <small class="form-text text-muted m-0">(XXX.XXX.XXX-XX)</small>
+                <input type="text" class="form-control" id="cpf" placeholder="Digite seu CPF">
+                
+                    <label class="labels" for="sexo">Sexo</label>
+                    <select onchange="selecaoSexo()" id="sexo" class="form-control">
+                        <option>Selecione o sexo</option>
+                        <option>Masculino</option>
+                        <option>Feminino</option>
+                    </select>
+                <label class="labels" for="telefoneFixo" class="m-0">Telefone Fixo</label>
+                <small class="form-text text-muted m-0">(DDD XXXX-XXXX)</small>
+                <input type="text" class="form-control" id="telefoneFixo" placeholder="Digite seu telefone">
+    
+                <label class="labels" for="celular" class="m-0">Celular</label>
+                <small class="form-text text-muted m-0">(DDD XXXX-XXXX)</small>
+                <input type="text" class="form-control" id="celular" placeholder="Digite seu celular">
+    
+        
+                <label class="labels" for="endereco">Endereço</label>
+                <input type="text" class="form-control" id="endereco" placeholder="Digite seu endereço">
+        
+                <label class="labels" for="bairro">Bairro</label>
+                <input type="text" class="form-control" id="bairro" placeholder="Digite seu bairro">
+    
+                <label class="labels" for="cep">CEP</label>
+                <input type="text" class="form-control" id="cep" placeholder="Digite seu CEP">
+    
+                <label class="labels" for="cidade">Cidade</label>
+                <input type="text" class="form-control" id="cidade" placeholder="Digite sua cidade">
+    
+                <label class="labels" for="estado">Estado</label>
+                <input type="text" class="form-control" id="estado" placeholder="Digite seu estado">
+            </div>
+        </div>
+        <div class="container d-flex justify-content-end">
+            <div class="row">        
+                <button onclick = "dadosForm()" class="botaoCadastro btn btn-primary d-block mt-3"  type="button">Cadastrar</button>
+            </div>
+        </div>
+    </section>
+        </main>
+

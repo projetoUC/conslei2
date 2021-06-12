@@ -1,0 +1,324 @@
+<main>
+    <section>
+        <div class="container w-100 mt-5">
+            <div class="row  d-flex bg-success align-self-center ">
+                <h3 class="text-white">consulta leitos</h3>
+            </div>
+        </div>
+
+        <div class="divCard1 container card mt-5 shadow-sm">
+            <div class="row form-group align-self-center mt-3">
+                <h6 class="text-success">Consulte leitos disponíveis na rede hospitalar de todo o Brasil</h6>
+            </div> 
+            <div class="row form-group align-self-center mt-3">
+                <p class="text-secondary">Escolha a localidade e tipo de busca</p>
+            </div> 
+            <div class="row form-group align-self-center">
+                <select id="ulEstado" class="form-login  form-control">
+                    <option>Selecione o estado</option>
+                    <option>São Paulo</option>
+                    <option>Rio de Janeiro</option>
+                    <option>Brasília</option>                    
+                </select>    
+            </div>
+            <div class="row form-group align-self-center">
+                <select id="ulCidade" class="form-login form-control" onchange="getOption()">
+                    <option>Selecione a cidade</option>
+                    <option>São Paulo</option>
+                    <option>Rio de Janeiro</option>
+                    <option>Brasília</option>                    
+                </select>    
+            </div>            
+            
+            
+            <div class="row form-group align-self-center">
+                <select id="ulTipoBusca" class="form-login form-control" onchange="getOption()">
+                    <option>Selecione o tipo de busca</option>
+                    <option>Por Hospital</option>
+                    <option>Por Tipo de Leito</option>
+                    <option>Por CEP</option>                    
+                </select>    
+            </div>
+            <div id="divBuscaHospital" class=" row form-group form-block align-self-center mt-5">            
+                <select id="ulBuscaHospital" class="text-center selecaoHospital form-login form-control">
+                    <option>Selecione o Hospital</option>
+                    <option>Hospital Albert Einstein Clínico</option>
+                    <option>Hospital Sirio Libanês</option>
+                    <option>Hospital São Camilo</option>
+                    <option>Hospital Oswaldo Cruz</option>
+                </select>
+                
+            </div>
+            <div   id="divBtnBuscaHospital" class=" row align-self-center">        
+                <button class="botaoRedefinirSenha btn btn-primary d-block"  type="button">Buscar</button>
+            </div>
+            
+        <div   id="divUlBuscaLeito" class="row form-group align-self-center mt-5" >            
+                <select id="ulBuscaLeito" class="form-login form-control" >
+                    <option>Selecione o tipo de leito</option>
+                    <option>Leito Clínico</option>
+                    <option>Leito Cirúrgico</option>
+                    <option>Leito Geriátrico</option>
+                    <option>Leito Obstétrico</option>
+                </select>    
+            </div>
+            <div  id="divBtnBuscaLeito"class=" row align-self-center">        
+                <button class="botaoRedefinirSenha btn btn-primary d-block"  type="button">Buscar</button>
+            </div>
+        
+            <div  id="divInputBuscaCEP" class=" row form-group align-self-center mt-5">            
+                <input type="text" class="form-login form-control" id="inputConsultarCep" placeholder="Digite seu CEP">            
+            </div>
+            <div  id="divBtnBuscaCEP" class=" row align-self-center">        
+                <button  onclick = "getOption()" class="botaoRedefinirSenha btn btn-primary d-block "  type="button" >Buscar</button>
+            </div>            
+        </div>
+
+        <div class="divCard2 container card mt-5">
+            <div class="row m-3">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <div class="row justify-content-center m-0 div-titulo-consulta">                            
+                                <h6>Consulta de leitos</h6>
+                        </div>
+                        <div class="d-flex row m-0">
+                            <p>Data:</p>            
+                        </div>
+                        <div class="d-flex row m-0">
+                            <p>Código do Leito:</p>            
+                        </div>
+            
+                    </div>
+                    <div class="card-body">
+                        <div class="divCard1 container card mt-3">
+                            <label for="nome">Dados da Instituição</label>
+                            
+                            <div class="row  container">
+                                <div class=" col-xl-6 col-lg-7 col-md-8 col-sm-6">                    
+                                    <label class="labels" for="razaoSocial">Razão Social</label>
+                                    <input type="text" class="formResultBusca form-control " id="razaoSocial" placeholder="">                   
+                                </div>
+                                <div class=" col-xl-3 col-lg-5 col-md-4 col-sm-6">                    
+                                    <label class="labels" for="tipoDeAdm">Tipo de Estabelecimento</label>
+                                    <input type="text" class="formResultBusca form-control" id="bairro" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row  container">
+                                <div class=" col-xl-6 col-lg-7 col-md-8 col-sm-6">
+                                    <label class="labels" for="endereco">Endereço</label>
+                                    <input type="text" class="formResultBusca form-control" id="endereco" placeholder="">
+                                </div>
+                                <div class=" col-xl-3 col-lg-5 col-md-4 col-sm-6">
+                                    <label class="labels" for="bairro">Bairro</label>
+                                    <input type="text" class="formResultBusca form-control" id="bairro" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row  container">
+                                <div class=" col-xl-3 col-lg-4 col-md-4 col-sm-4">
+                                    <label class="labels" for="cep">CEP</label>
+                                    <input type="text" class="formResultBusca form-control" id="cep" placeholder="">
+                                </div>
+                                <div class=" col-xl-3 col-lg-4 col-md-4 col-sm-4">
+                                    <label class="labels" for="cidade">Cidade</label>
+                                    <input type="text" class="formResultBusca form-control" id="cidade" placeholder="">
+                                </div>
+                                <div class=" col-xl-2 col-lg-2 col-md-2 col-sm-4">
+                                    <label class="labels" for="estado">Estado</label>
+                                    <input type="text" class="formResultBusca form-control" id="estado" placeholder="">
+                                </div>                    
+                            </div>
+                            <div class="row  container"> 
+                                <div class=" col-6">
+                                    <label class="labels" for="telefoneFixo" class="m-0">Telefone Fixo</label>
+                                    <small class="form-text text-muted m-0">(DDD XXXX-XXXX)</small>
+                                    <input type="text" class="formResultBusca form-control" id="telefoneFixo" placeholder="">
+                                </div>
+                                <div class=" col-6">
+                                    <label class="labels" for="fax" class="m-0">Fax</label>
+                                    <small class="form-text text-muted m-0">(DDD XXXX-XXXX)</small>
+                                    <input type="text" class="mb-3 formResultBusca form-control" id="fax" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                            <hr>          
+            
+            
+            
+                        <label for="">Dados do Leito</label>
+                        <div class=" container card">
+                       
+                           <div class="row">
+                               <div class=" col-4 d-flex justify-content-center">
+                                   <div class=" align-self-center h-75">
+                                       <h6>Tipo de leito</h6>
+                                   </div>
+                               </div>
+                               <div class=" col-4 d-flex justify-content-center">
+                                   <div class=" align-self-center h-75">
+                                       <h6>Total de leitos disponíveis</h6>
+                                   </div>
+                               </div>
+                               <div class=" col-4 d-flex justify-content-center">
+                                   <div class=" align-self-center h-75">
+                                       <h6>Reservas</h6>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class=" d-flex justify-content-center col-4 ">
+                                   <div class=" align-self-center h-50">
+                                       <p class=" ">Leito clínico</p>
+                                   </div>
+                               </div>
+                               <div class=" col-4 d-flex justify-content-center">
+                                   <div class=" align-self-center h-50">
+                                       <p>4</p>
+                                   </div>
+                               </div>
+                               <div class=" col-4">            
+                                   <div class=" align-self-center">
+                                       <input type="text" class="mb-3 form-control" id="leitoPediatricoDisponiveis" placeholder="Digite a quantidade">
+                                   </div>
+                               </div>
+                           </div>
+                       
+                       </div>
+
+
+
+
+                       <div class=" container card">
+                      
+                          <div class="row">
+                              <div class=" col-4 d-flex justify-content-center">
+                                  <div class=" align-self-center h-75">
+                                      <h6>Tipo de leito</h6>
+                                  </div>
+                              </div>
+                              <div class=" col-4 d-flex justify-content-center">
+                                  <div class=" align-self-center h-75">
+                                      <h6>Total de leitos disponíveis</h6>
+                                  </div>
+                              </div>
+                              <div class=" col-4 d-flex justify-content-center">
+                                  <div class=" align-self-center h-75">
+                                      <h6>Reservas</h6>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class=" d-flex justify-content-center col-4 ">
+                                  <div class=" align-self-center h-50">
+                                      <p class=" ">Leito Cirúrgico</p>
+                                  </div>
+                              </div>
+                              <div class=" col-4 d-flex justify-content-center">
+                                  <div class=" align-self-center h-50">
+                                      <p>7</p>
+                                  </div>
+                              </div>
+                              <div class=" col-4">            
+                                  <div class=" align-self-center">
+                                      <input type="text" class="mb-3 form-control" id="leitoPediatricoDisponiveis" placeholder="Digite a quantidade">
+                                  </div>
+                              </div>
+                          </div>
+                      
+                      </div>
+
+
+                      <div class=" container card">
+                     
+                         <div class="row">
+                             <div class=" col-4 d-flex justify-content-center">
+                                 <div class=" align-self-center h-75">
+                                     <h6>Tipo de leito</h6>
+                                 </div>
+                             </div>
+                             <div class=" col-4 d-flex justify-content-center">
+                                 <div class=" align-self-center h-75">
+                                     <h6>Total de leitos disponíveis</h6>
+                                 </div>
+                             </div>
+                             <div class=" col-4 d-flex justify-content-center">
+                                 <div class=" align-self-center h-75">
+                                     <h6>Reservas</h6>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="row">
+                             <div class=" d-flex justify-content-center col-4 ">
+                                 <div class=" align-self-center h-50">
+                                     <p class=" ">Leito Obstétrico</p>
+                                 </div>
+                             </div>
+                             <div class=" col-4 d-flex justify-content-center">
+                                 <div class=" align-self-center h-50">
+                                     <p>3</p>
+                                 </div>
+                             </div>
+                             <div class=" col-4">            
+                                 <div class=" align-self-center">
+                                     <input type="text" class="mb-3 form-control" id="leitoPediatricoDisponiveis" placeholder="Digite a quantidade">
+                                 </div>
+                             </div>
+                         </div>
+                     
+                     </div>
+
+
+                     <div class=" container card">
+                    
+                        <div class="row">
+                            <div class=" col-4 d-flex justify-content-center">
+                                <div class=" align-self-center h-75">
+                                    <h6>Tipo de leito</h6>
+                                </div>
+                            </div>
+                            <div class=" col-4 d-flex justify-content-center">
+                                <div class=" align-self-center h-75">
+                                    <h6>Total de leitos disponíveis</h6>
+                                </div>
+                            </div>
+                            <div class=" col-4 d-flex justify-content-center">
+                                <div class=" align-self-center h-75">
+                                    <h6>Reservas</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=" d-flex justify-content-center col-4 ">
+                                <div class=" align-self-center h-50">
+                                    <p class=" ">Leito Pediátrico</p>
+                                </div>
+                            </div>
+                            <div class=" col-4 d-flex justify-content-center">
+                                <div class=" align-self-center h-50">
+                                    <p>2</p>
+                                </div>
+                            </div>
+                            <div class=" col-4">            
+                                <div class=" align-self-center">
+                                    <input type="text" class="mb-3 form-control" id="leitoPediatricoDisponiveis" placeholder="Digite a quantidade">
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+
+
+
+
+
+            
+                        <a href="" class="btn btn-primary btn-block mt-3 w-25">Reservar</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Conslei Leitos de UTI <br>
+                        2021 - Todos os Direitos Reservados            
+                    </div>
+                </div>
+            </div>
+        </div>
+
+

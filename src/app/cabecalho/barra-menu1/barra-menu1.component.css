@@ -1,0 +1,82 @@
+.carousel-inner{
+    width: 100%;
+    height:100%;
+        
+  }
+
+  .barraNavegacao{
+    height: 200px;
+    
+  }
+  .divBarraNavegacao{
+    height: 200px;
+  }
+  .divColapse{
+      height: 200px;
+      align-items: flex-start;  
+  }
+  /*   .card{
+      width: 200px;
+      
+  }
+ */    .form-control{
+        height: 25px;
+        width: 150px;
+        font-size: small;
+    }
+    .btn-success{
+        /*height: 25px;*/
+        font-size: small;
+        
+    }
+    .navbar-collapse{
+        font-size: small;
+    }
+    .logo{
+        height:150px;
+    }
+    .nav-link{
+        font-size: small;
+        
+    }
+    .textolinkMenu1{
+        color:whitesmoke !important;
+    }
+    .barraNews{
+        color:whitesmoke;        
+    }
+    .textoDireitosAutorais{
+        color:whitesmoke;
+    }
+    span{
+        padding-left: 75px;
+    }
+    .articleIntroducao, .articleIntroducao2{
+        margin-top: 30px;
+    }
+    .cardArticle1{
+        width:50%;
+        margin-left: 0px;
+    }
+    .dropdown-item:hover{        
+        background-color:rgb(40, 167, 69);
+        color:white;
+    }
+
+    .btn-default{
+        border:none;
+        box-shadow: none;
+        shape-outside: none;
+    }
+    .btn-default:focus{
+        box-shadow: none;
+    }
+
+    .btn-default:hover{
+        border:none;
+        box-shadow: none;
+    }
+    .nav-item{
+        width: 25%;
+    }
+
